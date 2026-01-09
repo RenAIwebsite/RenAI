@@ -4,7 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RenAI | 下一代房产管理操作系统</title>
+  <title>RenAI | 下一代房产管理操作系统 - Property OS</title>
+  <meta name="description" content="从运营混沌到绝对掌控。RenAI 为政府、企业和大学提供世界级的租赁与物业管理解决方案。" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="RenAI | Professional Property OS" />
+  <meta property="og:description" content="Built by Operators, for Operators. Stop Firefighting. Start Scaling." />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
   <style>
@@ -19,35 +26,56 @@
       font-family: 'Noto Sans SC', sans-serif;
       scroll-behavior: smooth;
       color: #323338;
+      overflow-x: hidden;
     }
-    .font-heading {
-      font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+    .gradient-bg {
+      background: linear-gradient(135deg, #0073ea 0%, #a25ddc 100%);
+    }
+    #root:empty::before {
+      content: "";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid var(--monday-blue);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    .monday-card {
+      border: 1px solid #d0d4d9;
+      transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    .monday-card:hover {
+      border-color: var(--monday-blue);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
     }
     .gradient-text {
       background: linear-gradient(90deg, #0073ea 0%, #a25ddc 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .monday-button-primary {
-      background-color: var(--monday-blue);
-      transition: all 0.2s ease;
+    .monday-button-primary { background-color: var(--monday-blue); }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
     }
-    .monday-button-primary:hover {
-      background-color: #005fbc;
-      transform: translateY(-1px);
-    }
-    .monday-card {
-      border: 1px solid #d0d4d9;
-      transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-    .monday-card:hover {
-      border-color: var(--monday-blue);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    }
-    .status-badge-red { background: var(--monday-red); color: white; }
-    .status-badge-green { background: var(--monday-green); color: white; }
-    .status-badge-purple { background: var(--monday-purple); color: white; }
+    .animate-float { animation: float 6s ease-in-out infinite; }
   </style>
+  <script>
+    window.process = { env: { API_KEY: "" } };
+    window.onerror = function(msg, url, line) {
+      console.error("App Error:", msg, "at", url, ":", line);
+    };
+  </script>
 <script type="importmap">
 {
   "imports": {
@@ -55,6 +83,7 @@
     "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
     "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
   }
 }
@@ -62,5 +91,6 @@
 </head>
 <body class="bg-white">
   <div id="root"></div>
+  <script type="module" src="./index.tsx"></script>
 </body>
 </html>
