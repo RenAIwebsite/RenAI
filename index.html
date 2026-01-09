@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RenAI | 下一代房产管理操作系统</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --monday-blue: #0073ea;
+      --monday-green: #00ca72;
+      --monday-purple: #a25ddc;
+      --monday-red: #ff3d57;
+      --monday-orange: #ff9900;
+    }
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      scroll-behavior: smooth;
+      color: #323338;
+    }
+    .font-heading {
+      font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #0073ea 0%, #a25ddc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .monday-button-primary {
+      background-color: var(--monday-blue);
+      transition: all 0.2s ease;
+    }
+    .monday-button-primary:hover {
+      background-color: #005fbc;
+      transform: translateY(-1px);
+    }
+    .monday-card {
+      border: 1px solid #d0d4d9;
+      transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    .monday-card:hover {
+      border-color: var(--monday-blue);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+    .status-badge-red { background: var(--monday-red); color: white; }
+    .status-badge-green { background: var(--monday-green); color: white; }
+    .status-badge-purple { background: var(--monday-purple); color: white; }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+</head>
+<body class="bg-white">
+  <div id="root"></div>
+</body>
+</html>
