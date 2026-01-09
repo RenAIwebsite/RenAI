@@ -1,0 +1,7 @@
+{
+  "name": "Copy of RenAI - World-Class Tenancy & Property Management",
+  "description": "A high-performance landing page for RenAI, a tenancy and property management solution for governments, corporations, and universities. Transforming operational chaos into absolute control.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
