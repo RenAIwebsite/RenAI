@@ -1,18 +1,16 @@
 
 import React from 'react';
 import { 
-  Lock, 
   BarChart3, 
-  UserCheck, 
   FileText, 
   Building2, 
   GraduationCap, 
   Gavel,
-  Layers,
-  Zap,
-  Layout,
   Cpu,
-  ShieldCheck
+  ShieldCheck,
+  Lock,
+  Globe,
+  Server
 } from 'lucide-react';
 import { Feature, NavLink, TeamMember } from './types';
 
@@ -39,7 +37,7 @@ export const SOLUTIONS_DATA = [
     description: '重新定义学生居住体验，通过无人化智能硬件减少 80% 的前台人力。',
     icon: <GraduationCap className="w-10 h-10 text-[#ff9900]" />,
     color: '#ff9900',
-    points: ['智能水电表预付费', '移动端自助报修', '多校区统一管理']
+    points: ['智能水电表预付费', '移动端自助报修', '多校校区统一管理']
   },
   {
     id: 'corporate',
@@ -78,7 +76,24 @@ export const CORE_FEATURES: Feature[] = [
   }
 ];
 
-// Fix: Added missing TEAM_MEMBERS export to resolve the import error in TeamSection.tsx
+export const SECURITY_FEATURES = [
+  {
+    title: "数据主权与加密",
+    desc: "符合马来西亚 PDPA 个人数据保护法，所有数据进行 AES-256 企业级加密。",
+    icon: <Lock className="w-6 h-6 text-blue-500" />
+  },
+  {
+    title: "银行级灾备",
+    desc: "基于混合云架构，提供 99.99% 的系统可用性与实时异地冷备。",
+    icon: <Server className="w-6 h-6 text-blue-500" />
+  },
+  {
+    title: "多租户隔离",
+    desc: "针对政府与大型集团，提供完全独立的数据环境与专用 API 通道。",
+    icon: <Globe className="w-6 h-6 text-blue-500" />
+  }
+];
+
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Rachel Lim',
